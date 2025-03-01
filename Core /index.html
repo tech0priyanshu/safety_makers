@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SafeRoute - Smart Navigation</title>
+    <link rel="stylesheet" href="safe_rotue_api.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDv0leB0g4StU2y-3aXhBpO0g0Bu-qhy34&libraries=places" defer></script>
+</head>
+<body>
+    <div class="app-container">
+        <header>
+            <h1>SafeRoute</h1>
+            <p>Navigate safely with real-time crime and lighting data</p>
+        </header>
+
+        <div class="main-content">
+            <div class="control-panel">
+                <form id="route-form">
+                    <div class="input-group">
+                        <label for="origin-input">Starting Point</label>
+                        <input type="text" id="origin-input" placeholder="Enter your starting location">
+                    </div>
+                    
+                    <div class="input-group">
+                        <label for="destination-input">Destination</label>
+                        <input type="text" id="destination-input" placeholder="Enter your destination">
+                    </div>
+                    
+                    <div class="input-group">
+                        <label for="travel-mode">Travel Mode</label>
+                        <select id="travel-mode">
+                            <option value="WALKING">Walking</option>
+                            <option value="TRANSIT">Public Transit</option>
+                            <option value="DRIVING">Driving</option>
+                            <option value="BICYCLING">Bicycling</option>
+                        </select>
+                    </div>
+                    
+                    <div class="input-group">
+                        <label for="time-of-travel">Time of Travel</label>
+                        <input type="datetime-local" id="time-of-travel">
+                    </div>
+                    
+                    <div class="slider-group">
+                        <label for="safety-priority">Safety Priority</label>
+                        <input type="range" id="safety-priority" min="1" max="10" value="7">
+                        <div class="slider-labels">
+                            <span>Faster</span>
+                            <span>Safer</span>
+                        </div>
+                    </div>
+                    
+                    <button type="submit" id="find-route-btn">Find Safe Route</button>
+                    <button type="button" id="find-safe-zones-btn">Show Nearby Safe Zones</button>
+                </form>
+                
+                <div class="route-info" id="route-info">
+                    <h3>Route Information</h3>
+                    <div id="safety-score" class="safety-score">
+                        <span class="label">Safety Score:</span>
+                        <span class="value">--</span>
+                    </div>
+                    <div id="route-details">
+                        <p>Select a route to see details</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div id="map" class="map-container"></div>
+        </div>
+        
+        <div id="safety-legend" class="safety-legend">
+            <h4>Safety Level</h4>
+            <div class="legend-item">
+                <span class="color-box high-safety"></span>
+                <span>High Safety</span>
+            </div>
+            <div class="legend-item">
+                <span class="color-box medium-safety"></span>
+                <span>Medium Safety</span>
+            </div>
+            <div class="legend-item">
+                <span class="color-box low-safety"></span>
+                <span>Low Safety</span>
+            </div>
+        </div>
+    </div>
+    
+    <script src="safe_route_api.js"></script>
+</body>
+</html>
