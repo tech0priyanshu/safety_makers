@@ -13,8 +13,8 @@ app = Flask(__name__)
 
 # Configuration
 GOOGLE_MAPS_API_KEY = os.environ.get('GOOGLE_MAPS_API_KEY', 'YOUR_API_KEY')
-CRIME_DATA_API_URL = os.environ.get('CRIME_DATA_API_URL', 'https://data.cityofexample.org/api/v2/crime')
-STREET_LIGHT_API_URL = os.environ.get('STREET_LIGHT_API_URL', 'https://data.cityofexample.org/api/v2/street-lights')
+CRIME_DATA_API_URL = os.environ.get('CRIME_DATA_API_URL', 'crime')
+STREET_LIGHT_API_URL = os.environ.get('STREET_LIGHT_API_URL', 'lidat')
 
 # Load sample crime data if no API is available (for demo purposes)
 def load_sample_crime_data():
