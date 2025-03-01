@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Track Report - Women's Safety Reporting System</title>
+    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  </head>
+
+  <body>
+    <header>
+      <div class="container">
+        <div class="logo">
+          <i class="fas fa-shield-alt"></i>
+          <div>
+            <h1>SafetyReport</h1>
+            <p>Women's Safety Initiative</p>
+          </div>
+        </div>
+        <nav>
+          <a href="index1.html">Home</a>
+          <a href="track.html" class="active">Track Report</a>
+          <a href="#" id="resources-link">Resources</a>
+        </nav>
+        <a href="new-report.html" class="submit-btn">Submit Report</a>
+      </div>
+    </header>
+
+    <main>
+      <div class="container track-container">
+        <div class="track-card">
+          <h1>Track Your Report</h1>
+          <p>Enter your report ID to check the status and updates.</p>
+          
+          <form id="track-form">
+            <div class="form-group">
+              <label for="report-id">Report ID <span class="required">*</span></label>
+              <input type="text" id="report-id" name="report-id" required placeholder="Enter your report ID">
+            </div>
+            
+            <div class="form-buttons">
+              <button type="submit" class="primary-btn">
+                <i class="fas fa-search"></i> Find Report
+              </button>
+            </div>
+          </form>
+          
+          <div id="track-error" class="error-message hidden">
+            <i class="fas fa-exclamation-circle"></i>
+            <span>Report not found. Please check the ID and try again.</span>
+          </div>
+        </div>
+        
+        <div class="track-help">
+          <h2>Don't have your Report ID?</h2>
+          <p>Your Report ID was provided when you submitted your report. If you've lost it, please check your email for the confirmation message.</p>
+          <p>For additional assistance, contact our support team at <a href="mailto:support@safetyreport.org">support@safetyreport.org</a></p>
+        </div>
+      </div>
+    </main>
+
+    <footer>
+      <div class="container">
+        <div class="footer-grid">
+          <div class="footer-col">
+            <h3>SafetyReport</h3>
+            <p>Dedicated to improving women's safety through accessible reporting and support.</p>
+          </div>
+          
+          <div class="footer-col">
+            <h3>Quick Links</h3>
+            <ul>
+              <li><a href="index1.html">Home</a></li>
+              <li><a href="new-report.html">Submit Report</a></li>
+              <li><a href="track.html">Track Report</a></li>
+              <li><a href="#" id="resources-footer">Resources</a></li>
+            </ul>
+          </div>
+          
+          <div class="footer-col">
+            <h3>Emergency Contacts</h3>
+            <ul class="contacts">
+              <li><span>Police:</span> 911</li>
+              <li><span>Women's Help Line:</span> 1-800-799-SAFE</li>
+              <li><span>Crisis Text Line:</span> Text HOME to 741741</li>
+            </ul>
+          </div>
+        </div>
+        
+        <div class="copyright">
+          <p>© <span id="current-year"></span> SafetyReport. All rights reserved. 
+          <span>This is a demo application - not for actual emergency reporting.</span></p>
+        </div>
+      </div>
+    </footer>
+
+    <script src="trackReport.js"></script>
+  </body>
+</html>
